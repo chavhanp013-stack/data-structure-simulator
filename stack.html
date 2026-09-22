@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stack Simulator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="simulator-container">
+
+    <!-- HEADER -->
+    <div class="page-header">
+        <a href="index.html" class="home-btn">← Home</a>
+        <h1>STACK SIMULATOR</h1>
+        <p>Visualize Stack Operations Easily</p>
+    </div>
+
+
+    <!-- TOP SECTION -->
+    <div class="top-section">
+
+        <!-- LEFT SIDE -->
+        <div class="left-panel">
+
+            <!-- STACK SIZE -->
+            <div class="size-box">
+
+                <label>Stack Size</label>
+
+                <input
+                    type="number"
+                    id="stackSize"
+                    value="5"
+                    min="1"
+                >
+
+                <button onclick="setSize()">Set Size</button>
+
+            </div>
+
+
+            <!-- OPERATIONS -->
+            <div class="operations-box">
+
+                <h2>Stack Operations</h2>
+
+                <div class="input-row">
+
+                    <input
+                        type="number"
+                        id="valueInput"
+                        placeholder="Enter value"
+                    >
+
+                    <button class="push-btn" onclick="pushElement()">
+                        Push
+                    </button>
+
+                </div>
+
+
+                <div class="operation-buttons">
+
+                    <button onclick="popElement()">
+                        Pop
+                    </button>
+
+                    <button onclick="peekElement()">
+                        Peek
+                    </button>
+
+                    <button onclick="displayStack()">
+                        Display
+                    </button>
+
+                    <button class="reset-btn" onclick="resetStack()">
+                        Reset
+                    </button>
+
+                </div>
+
+
+                <div id="message" class="message">
+                    Stack is ready
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="right-panel">
+
+            <h2>Stack Visualization</h2>
+
+            <div class="stack-area">
+
+                <div class="top-label">TOP</div>
+
+                <div id="stack"></div>
+
+                <div class="bottom-label">BOTTOM</div>
+
+            </div>
+
+
+            <!-- HISTORY -->
+            <div class="history-box">
+
+                <h2>Operation History</h2>
+
+                <div id="history">
+                    <p>No operations yet.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- STATUS SECTION -->
+    <div class="status-section">
+
+        <div class="status-card">
+            <span>IS EMPTY</span>
+            <strong id="isEmpty">No</strong>
+        </div>
+
+        <div class="status-card">
+            <span>IS FULL</span>
+            <strong id="isFull">No</strong>
+        </div>
+
+        <div class="status-card">
+            <span>SIZE</span>
+            <strong id="sizeDisplay">5</strong>
+        </div>
+
+        <div class="status-card">
+            <span>ELEMENTS</span>
+            <strong id="elements">0 / 5</strong>
+        </div>
+
+
+        <div class="status-card">
+            <span>TOP ELEMENT</span>
+            <strong id="topElement">-</strong>
+        </div>
+
+        <div class="status-card">
+            <span>BOTTOM ELEMENT</span>
+            <strong id="bottomElement">-</strong>
+        </div>
+
+        <div class="status-card">
+            <span>OPERATION</span>
+            <strong id="operation">None</strong>
+        </div>
+
+        <div class="status-card">
+            <span>STATE</span>
+            <strong id="state">Ready</strong>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/stack.js"></script>
+
+</body>
+</html>
